@@ -1,0 +1,18 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<div class='container'>
+    <a href="#" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">新規作成</a>
+    {% for item in object_list %}
+    <div class="alert alert-{{ item.priority }}" role="alert">
+        <p>{{ item.title }}　期日：{{ item.deadline }}</p>
+        <a href="#" class="btn btn-info" tabindex="-1" role="button"
+            aria-disabled="true">編集</a>
+        <a href="#" class="btn btn-primary" tabindex="-1" role="button"
+            aria-disabled="true">削除</a>
+        <a href="#" class="btn btn-success" tabindex="-1" role="button"
+            aria-disabled="true">詳細</a>
+    </div>
+
+{% endblock %}
