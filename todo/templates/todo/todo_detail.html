@@ -1,0 +1,22 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<table class="table">
+  <tr>
+    <th>タイトル</th>
+    <td>{{ todo.title }}</td>
+  </tr>
+  <tr>
+    <th>本文</th>
+    <td>{{ todo.memo | linebreaksbr }}</td>
+  </tr>
+  <tr>
+    <th>締め切り</th>
+    <td>{{ todo.deadline }}</td>
+  </tr>
+
+</table>
+
+
+
+{% endblock %}
