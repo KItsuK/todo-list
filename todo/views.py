@@ -19,7 +19,7 @@ class CreateView(generic.CreateView):
 
 class UpdateView(generic.UpdateView):
     model = Todo
-    success_url =reverse_lazy('index')
+    success_url = reverse_lazy('index')
     form_class = TodoForm
 
 class DeleteView(generic.DeleteView):
