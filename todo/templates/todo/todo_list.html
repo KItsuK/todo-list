@@ -4,14 +4,18 @@
 
 
 <div class='container'>
-    <a href="{% url 'create' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">新規作成</a>
+    <a href="{% url 'todo:create' %}" class="btn btn-info" tabindex="-1" role="button"
+     aria-disabled="true">新規作成</a>
+</div>
+
+<div class="container">
     {% for item in object_list %}
       <p>{{ item.title }}　期日：{{ item.deadline }}</p>
-      <a href="{% url 'update' todo.pk %}" class="btn btn-info" tabindex="-1" role="button"
+      <a href="{% url 'todo:update' item.pk %}" class="btn btn-info" tabindex="-1" role="button"
             aria-disabled="true">編集</a>
-      <a href="{% url 'delete' todo.pk %}" class="btn btn-primary" tabindex="-1" role="button"
+      <a href="{% url 'todo:delete' item.pk %}" class="btn btn-primary" tabindex="-1" role="button"
             aria-disabled="true">削除</a>
-      <a href="{% url 'detail' todo.pk %}" class="btn btn-success" tabindex="-1" role="button"
+      <a href="{% url 'todo:detail' item.pk %}" class="btn btn-success" tabindex="-1" role="button"
             aria-disabled="true">詳細</a>
 
     {% endfor %}

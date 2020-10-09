@@ -15,8 +15,15 @@
     <td>{{ todo.deadline }}</td>
   </tr>
 
+
 </table>
 
+<div class='container'>
+  <a href="{% url 'todo:update' todo.pk %}" class="btn btn-success" tabindex="-1" role="button"
+        aria-disabled="true">更新</a>
+  <a href="{% url 'todo:delete' todo.pk %}" class="btn btn-primary" tabindex="-1" role="button"
+        aria-disabled="true">削除</a>
+</div>
 
 
 {% endblock %}

@@ -14,14 +14,14 @@ class DetailView(generic.DetailView):
 
 class CreateView(generic.CreateView):
     model = Todo
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('todo:index')
     form_class = TodoForm
 
 class UpdateView(generic.UpdateView):
     model = Todo
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('todo:index')
     form_class = TodoForm
 
 class DeleteView(generic.DeleteView):
     model = Todo
-    success_url = reverse_lazy('index')
+    success_url = reverse_lazy('todo:index')
