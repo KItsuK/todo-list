@@ -1,0 +1,25 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<form action="" method="POST">
+  <table class="table">
+    <tr>
+      <th>title</th>
+      <td>{{ form.title }}</td>
+    </tr>
+    <tr>
+      <th>memo</th>
+      <td>{{ form.memo }}</td>
+    </tr>
+    <tr>
+      <th>deadline</th>
+      <td>{{ form.deadline }}</td>
+    </tr>
+
+  </table>
+
+<button type="submit" class="btn btn-primary">送信</button>
+{% csrf_token %}
+
+{% endblock %}
