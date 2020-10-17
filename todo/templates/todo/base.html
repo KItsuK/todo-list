@@ -12,14 +12,27 @@
 
   </head>
   <body>
-    <header>
-      <div class='header'>
-        <a href="{% url 'todo/index' %}">HOME</a>
-        <a href="#">LOGIN</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">TODO</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home </a>
+          </li>
+          {% if user.is_superuser %}
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login </a>
+          </li>
+          {% endif %}
+        </ul>
       </div>
-    </header>
+    </nav>
 
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron">
         <div class="container">
             <h1 class="display-4">Todo List</h1>
             <p class="lead">Todo listを作って毎日を効率的に過ごしましょう。</p>
